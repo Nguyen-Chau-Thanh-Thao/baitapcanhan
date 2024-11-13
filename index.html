@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGUYỄN CHÂU THANH THẢO</title>
+</head>
+
+<body style="font-family: 'Arial', sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; color: #333;">
+
+    <!-- Tiêu đề chính -->
+    <header style="background: linear-gradient(to right, #d9534f, #ff6f61); padding: 60px 20px; text-align: center; color: white; font-size: 3.5em; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        TRANG CHỦ
+    </header>
+
+    <!-- Thông tin cá nhân -->
+    <section style="max-width: 900px; margin: 40px auto; padding: 40px; background-color: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <h2 style="color: #d9534f; text-align: center; font-size: 2.5em; margin-bottom: 20px;">Thông tin cá nhân</h2>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Họ và tên:</b> <span style="color: #1e90ff; font-weight: bold;">NGUYỄN CHÂU THANH THẢO</span></p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Tuổi:</b> 18</p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Ngày sinh:</b> 22/08/2006</p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Số điện thoại:</b> 0363382997</p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Quê quán:</b> <a href="https://vi.wikipedia.org/wiki/Ki%C3%AAn_Giang" target="_blank" style="color: #d9534f; text-decoration: none; font-weight: bold; transition: color 0.3s;">Tỉnh Kiên Giang</a></p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 15px;"><b>Nơi ở hiện tại:</b> 338/32 An Dương Vương, Phường 4, Quận 5, Thành phố Hồ Chí Minh</p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 20px;"><b>Email:</b> nguyenthao220806@gmail.com</p>
+        <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 20px;"><b>MSSV:</b> 50.01.103.069 - Lớp: 50.01.TINSP.B</p>
+    </section>
+
+    <!-- Liên kết bài nộp cá nhân -->
+    <section style="max-width: 900px; margin: 40px auto; padding: 40px; background-color: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <h2 style="color: #d9534f; text-align: center; font-size: 2.5em; margin-bottom: 20px;">Bài nộp cá nhân</h2>
+        <ul style="list-style-type: none; padding-left: 0; text-align: center; margin-top: 20px;">
+            <li style="font-size: 1.5em; margin-bottom: 20px;">
+                <a href="CV.html" style="color: #d9534f; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #d9534f; border-radius: 30px; transition: all 0.3s ease;">
+                    CV CÁ NHÂN
+                </a>
+            </li>
+            <li style="font-size: 1.5em; margin-bottom: 20px;">
+                <a href="Hồ cá.html" style="color: #d9534f; font-weight: bold; text-decoration: none; padding: 10px 20px; border: 2px solid #d9534f; border-radius: 30px; transition: all 0.3s ease;">
+                    HỒ CÁ
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Thông tin footer -->
+    <footer style="text-align: center; padding: 20px; background-color: #d9534f; color: white; position: fixed; width: 100%; bottom: 0; box-shadow: 0 -4px 10px rgba(0,0,0,0.1);">
+        <p style="margin: 0; font-size: 1.1em;">&copy; 2024 NGUYỄN CHÂU THANH THẢO</p>
+    </footer>
+
+    <!-- Hiệu ứng hover -->
+    <script>
+        // Thêm hiệu ứng hover cho các liên kết
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#d9534f';
+                this.style.color = '#fff';
+                this.style.transform = 'scale(1.1)';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+                this.style.color = '#d9534f';
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

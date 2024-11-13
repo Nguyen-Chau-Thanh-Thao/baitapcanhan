@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ Cá Của Nguyễn Châu Thanh Thảo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="pond">
+  
+  <!-- Sóng nước -->
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+
+  <!-- Hình ảnh đá cuội dưới đáy hồ -->
+  <div class="rocks"></div>
+  
+  <!-- Hình ảnh rong rêu -->
+  <div class="seaweed"></div>
+  <div class="seaweed2"></div>
+
+  <!-- Thêm cá -->
+  <div class="fish" id="fish1"></div>
+  <div class="fishT" id="fish2"></div>
+  <div class="fishY" id="fish3"></div>
+  <div class="fishz" id="fisha"></div>
+  <div class="fishz" id="fishb"></div>
+  <div class="fishx" id="fishc"></div>
+<!-- thả xuống để chọn bài hát từ Spotify -->
+<div class="music-selector">
+  <label for="spotifyTrack">Chọn bài hát :</label>
+  <select id="spotifyTrack" onchange="changeSpotifyTrack()">
+    <option value="2plbrEY59IikOBgBGLjaoe">Wonder</option>
+    <option value="5X7IFDhbms7v9pUoT9J7Dw">Pixel slower</option>
+    <option value="7l6V1cdjVlgO8fKN6Lltfr">Bagatelle in A Minor, No. 25: WoO 59. Für Elise</option>
+  </select>
+</div>
+
+<!-- Đĩa nhạc xoay và iframe Spotify -->
+<div class="music-disc">
+  <div class="disc"></div>
+  <div id="spotifyPlayer">
+    <iframe id="spotifyIframe1" style="border-radius:12px" src="https://open.spotify.com/embed/track/0bkuLdEuBDgJc3XLoZ95Mw?utm_source=generator" width="400" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe id="spotifyIframe2" style="border-radius:12px" src="https://open.spotify.com/embed/track/3zjjDfCFvikQWcR2KAHcwC?utm_source=generator" width="400" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe id="spotifyIframe3" style="border-radius:12px" src="https://open.spotify.com/embed/track/0Ikj9nVXpLWZMU3Gy7hSF6?utm_source=generator" width="400" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
+                             
+<!-- thả xướng để chọn background-->
+<div class="background-selector">
+  <label for="backgroundList">Chọn nền bể cá:</label>
+  <select id="backgroundList" onchange="changeBackground()">
+    <option value="https://i.pinimg.com/564x/12/f6/95/12f6955e1078f17c5c5ad4637e8aa0eb.jpg">Nền 1</option>
+    <option value="https://scontent.xx.fbcdn.net/v/t1.15752-9/462560480_537097242499443_2581242251823201068_n.png?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeFIH8iHf5aj698xFpl3ieCF7lBq0dN6HmvuUGrR03oeawZeLctx_fx9v5RNNTffq0EjHwVFHbyxgDNN-kw95F_d&_nc_ohc=POU5v6QwuEgQ7kNvgE5NwsG&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QH2B07TLLZddiTGWIZ16u_DL2NytNy3JAdsEt6PqUHGkg&oe=6756316A">Nền 2</option>
+
+  </select>
+</div>
+
+
+<script src="javaScript.js"></script>
+</body>
+</html>

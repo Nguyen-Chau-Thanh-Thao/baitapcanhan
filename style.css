@@ -1,0 +1,327 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #52ccf5, #006699); /* Màu nước */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Container của ao cá */
+.pond 
+{
+  position: relative;
+  width: 1600px;
+  height: 900px;
+  overflow: hidden;
+  background: url('https://i.pinimg.com/564x/12/f6/95/12f6955e1078f17c5c5ad4637e8aa0eb.jpg') no-repeat center center; /* Đặt hình nền cho ao cá */
+  background-size: cover; 
+  perspective: 1500px; /* Thêm hiệu ứng chiều sâu 3D */
+  border: 20px solid #fff; /* Khung viền trắng giống bể cá */
+  border-radius: 20px; /* Góc viền tròn để tạo cảm giác */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ xung quanh để tạo hiệu ứng */ 
+  z-index:1
+}
+
+.pond::before, .pond::after 
+{
+content: '';
+position: absolute;
+width: 00px;
+height: 60px;
+background: #180101; /* Màu viền */
+z-index: 8; /* Đảm bảo nó nằm trên phần tử .pond */
+}
+
+.pond::before {
+top: -35px; /* Vị trí của khung viền trên */
+}
+
+.pond::after {
+bottom: -35px; /* Vị trí của khung viền dưới */
+}
+  /* Các con cá */
+  .fish 
+  {
+  position:absolute ;
+  width: 400px;
+  height: 250px;
+  background: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/462638259_1767428427340991_8473411388186977172_n.png?stp=dst-png_s480x480&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEIgb39pqkx6yPFDtUulaM-s7AQ5hrhcOizsBDmGuFw6MhblIshVZG-TIWn-9jQJovAphZ5FdQJgz0t6zsUg9JU&_nc_ohc=pwIpUOIauowQ7kNvgHYZOor&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEU4piiP8A0WJLIZD6f-XNl-mUG7BWtqAHiwLRw9NdI7Q&oe=67557F13') no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  transition: transform 0.5s ease-in-out; /* Tạo hiệu ứng di chuyển mượt mà */
+}
+.fishY
+  {
+  position:absolute ;
+  width: 288px;
+  height: 360px;
+  background: url('https://png.pngtree.com/png-vector/20240708/ourmid/pngtree-thai-fighting-fish-png-image_13004171.png') no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  transition: transform 0.5s ease-in-out;
+}
+.fishT
+  {
+  position:absolute ;
+  width: 360px;
+  height: 360px;
+  background: url('https://png.pngtree.com/png-vector/20240805/ourmid/pngtree-colorful-beta-fish-graphic-png-image_13386016.png') no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  transition: transform 0.4s ease-in-out; 
+}
+.fishz
+  {
+  position:absolute ;
+  width: 200px;
+  height: 100px;
+  background: url('https://static.vecteezy.com/system/resources/previews/024/722/367/non_2x/fish-with-ai-generated-free-png.png') no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.fishx
+  {
+  position:absolute ;
+  width: 400px;
+  height: 250px;
+  background: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/462644362_1074726491063849_5730397278295883721_n.png?stp=dst-png_s480x480&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEd61s2X4Ym0_pHlxsDaLThjtGbd3bH1E-O0Zt3dsfUTxClKkucpCwoipCJpENiZXUdgAnlFmKTOq3tpjiF8oA7&_nc_ohc=fPzizjR5Ke4Q7kNvgHD2fXm&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEfeHMXL45cTBPeFzBFVCJMJrX3WJn3pTVlTSZ6WEashA&oe=67558BDC') no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  transition: transform 0.5s ease-in-out; 
+}
+
+/* Hiệu ứng chuyển động của cá */
+@keyframes move-fish {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--target-x), var(--target-y));
+  }
+}
+/* Hình ảnh đá cuội dưới đáy hồ */   
+.rocks 
+{
+position: absolute;
+top: 36%;
+left: 20;
+width: 100%;
+height: 75%;
+background: url('https://i.pinimg.com/originals/9c/cc/03/9ccc03dbb8cdf234151f1095b7ed85f1.png') no-repeat center bottom;
+background-size: cover;
+animation: move-rocks 8s infinite ease-in-out; /* Chuyển động đá cuội */
+transform: translateZ(0); /* Giúp hiệu ứng 3D hoạt động mượt mà */
+z-index: 1;
+overflow: hidden;
+}
+
+
+.rocks::before,
+.rocks::after {
+content: '';
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+background: url('https://i.pinimg.com/originals/9c/cc/03/9ccc03dbb8cdf234151f1095b7ed85f1.png') no-repeat center bottom;
+background-size: cover;
+animation: rocks-move 8s infinite ease-in-out;
+}
+
+/* Hiệu ứng chuyển động lắc lư tự nhiên cho đá cuội */
+@keyframes rocks-move {
+0%, 100% {
+transform: translateY(0) rotate(0deg); /* Vị trí ban đầu của đá cuội */
+}
+25% {
+transform: translateY(3px) rotate(-2deg); /* Lắc qua trái */
+}
+50% {
+transform: translateY(-3px) rotate(2deg); /* Lắc qua phải */
+}
+75% {
+transform: translateY(2px) rotate(-1deg); /* Lắc nhẹ về phía trái */
+}
+}
+/* Hình ảnh rong rêu dọc theo đáy hồ */
+.seaweed  {
+position: absolute;
+top: 80%;
+left: -10%;
+width: 20%;
+height: 30%;
+background: url('https://png.pngtree.com/png-vector/20240205/ourmid/pngtree-green-seaweed-plant-png-image_11543470.png') no-repeat center center;
+background-size: cover;
+z-index: 2;
+transform: rotate(-10deg) perspective(1000px) rotateX(10deg); /* Thêm hiệu ứng 3D */
+animation: sway-seaweed 5s infinite ease-in-out;
+}
+.seaweed2 {
+  position: absolute;
+  top: 80%;
+  left: 88%;
+  width: 20%;
+  height: 30%;
+  background: url('https://png.pngtree.com/png-vector/20240205/ourmid/pngtree-green-seaweed-plant-png-image_11543470.png') no-repeat center center;
+  background-size: cover;
+  z-index: 2;
+  transform: rotate(-10deg) perspective(1000px) rotateX(10deg); /* Thêm hiệu ứng 3D */
+  animation: sway-seaweed 5s infinite ease-in-out;
+  }
+
+/* Hiệu ứng chuyển động sóng cho rong rêu */
+@keyframes sway-seaweed {
+0%, 100% {
+transform: rotate(-10deg) rotateX(10deg); /* Xoay nhẹ cho rong rêu */
+}
+50% {
+transform: rotate(10deg) rotateX(10deg); /* Quay trái và phải */
+}
+}
+
+/* Hiệu ứng chuyển động sóng cho rong rêu */
+@keyframes sway-seaweed2 {
+0%, 100% {
+transform: rotate(-10deg) rotateX(10deg); /* Xoay nhẹ cho rong rêu */
+}
+50% {
+transform: rotate(10deg) rotateX(10deg); /* Quay trái và phải */
+}
+}
+
+ /* Sóng nước với chuyển động tự nhiên */
+ .wave 
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300%;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: wave-animation 10s infinite ease-in-out;
+  animation-timing-function: ease-in-out;
+  z-index: 5;
+}
+
+.wave:nth-child(2) {
+  bottom: 10%;
+  width: 350%;
+  opacity: 0.3;
+  animation-duration: 12s;
+}
+
+.wave:nth-child(3) {
+  bottom: 20%;
+  width: 400%;
+  opacity: 0.2;
+  animation-duration: 15s;
+}
+
+/* Hiệu ứng sóng di chuyển tự nhiên */
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(5px) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+/* Bọt khí */
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bubble-rise 5s infinite ease-in-out;
+}
+
+/* Hiệu ứng động của bọt khí */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Đĩa nhạc xoay */
+.music-disc {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 12;
+}
+
+.disc {
+  width: 90px;
+  height: 90px;
+  background: url('https://png.pngtree.com/png-vector/20231015/ourmid/pngtree-cd-music-disc-audio-png-image_10164180.png');
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: spin 10s linear infinite; /* Quay tròn */
+  position: relative;
+  z-index: 12;
+  background-size: cover;  /* Đảm bảo ảnh không bị méo và phủ kín phần tử */
+  background-position: center;  
+}
+
+/* Hiệu ứng quay tròn */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.music-selector {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 12;
+}
+
+.music-selector select {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.music-selector label {
+  font-size: 16px;
+  color: white;
+}
+
+.music-disc iframe {
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+.background-selector {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
